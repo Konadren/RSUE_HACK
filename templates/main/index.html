@@ -1,0 +1,103 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'main/css/index.css' %}" >
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Зеленыши 2.0</a>
+  </div>
+</nav>
+</header>
+<main>
+
+    <div class="container">
+
+
+        <div class="persons">
+            <h4>Люди</h4>
+            <div>
+
+                {% for el in persons %}
+                    <span>{{ el.LastName }}</span>
+                    <span>{{ el.Name }}</span><br>
+                {% endfor %}
+
+            </div>
+        </div>
+        <div class="persons">
+            <h4>Люди в зоне риска</h4>
+            <div>
+                {% for el in burnedPeople %}
+                    <span>{{ el.Name }}</span>
+                    <span>{{ el.LastName }} - </span>
+                    <span>{{ el.BurnChance }}%</span><br>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="persons settings">
+            <h4>Выберете период</h4>
+            <form method="post">
+                {% csrf_token %}
+                <label for="start_date">Start Date:</label>
+                <input type="date" id="start_date" name="start_date">
+
+                <label for="end_date">End Date:</label>
+                <input type="date" id="end_date" name="end_date">
+
+                <input type="submit" value="Применить">
+            </form>
+{#            <form method="post">#}
+{#                {% csrf_token %}#}
+{#                {{ form }}#}
+{##}
+{#                <button type="submit" class="submit_button">Применить</button>#}
+{#                <span>{{ error }}</span>#}
+{#            </form>#}
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+    
+    <div class="charts">
+        <div class="chart">
+            <h4>Устал, да?</h4>
+            <img src="{% static 'main/img/cat.jpg' %}" alt="cat">
+
+        </div>
+        <div class="chart">
+            <h4>Время отдохнуть!</h4>
+            <img src="{% static 'main/img/cat3.jpg' %}" alt="cat">
+        </div>
+        <div class="chart">
+            <h4>Не выгорай...</h4>
+            <img src="{% static 'main/img/cat2.jpg' %}" alt="cat">
+        </div>
+        <div class="chart">
+            <h4>Я слежу за тобой!</h4>
+            <img src="{% static 'main/img/cat1.jpg' %}" alt="cat">
+        </div>
+
+
+        </div>
+</main>
+</body>
+</html>

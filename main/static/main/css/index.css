@@ -1,0 +1,74 @@
+main {
+    border: 2px solid black;
+    width: 100%;
+    background: #212529;
+
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+
+
+}
+div {
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+
+}
+.persons {
+    border: 2px solid #343A40;
+    width: 60%;
+    background: #495057;
+    border-radius: 30px;
+    padding: 10px;
+
+
+}
+
+.charts {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    row-gap:  60px;
+
+
+
+
+}
+
+.chart {
+    display: grid;
+    width: 90%;
+    border: 2px solid #343A40;
+    border-radius: 40px;
+    place-items: center;
+    background-color: #495057;
+
+}
+
+img {
+    width: 90%;
+    height: 90%;
+}
+
+
+
+input {
+    border: 2px solid #343A40;
+    border-radius: 20px;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+button {
+    border: 2px solid #343A40;
+    border-radius: 30px;
+    margin-top: 20px;
+
+}
+.settings {
+    padding: 10px;
+}
